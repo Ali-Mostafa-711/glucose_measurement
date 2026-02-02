@@ -47,7 +47,7 @@ export default function Signup() {
       {/* Left - Image */}
       <div className="hidden md:flex items-center justify-center bg-linear-to-br from-indigo-700 to-blue-600">
         <div className="text-white text-center px-10">
-          <h3 className="text-4xl font-bold mb-4">Join NurturaRx Today</h3>
+          <h3 className="text-4xl font-bold mb-4">Join Diabetes-care Today</h3>
           <p className="text-lg text-blue-100">
             Take control of your blood sugar and your health.
           </p>
@@ -97,9 +97,9 @@ export default function Signup() {
               </p>
             )}
 
-            {
-              loading && (<p className="text-blue-500 text-lg text-center">Signing up...</p>)
-            }
+            {loading && (
+              <p className="text-blue-500 text-lg text-center">Signing up...</p>
+            )}
 
             <button
               onClick={handleSubmit}

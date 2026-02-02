@@ -85,9 +85,7 @@ export default function Login() {
               </p>
             )}
             {data && data.msg && (
-              <p className="text-green-500 text-lg text-center">
-                {data.msg}
-              </p>
+              <p className="text-green-500 text-lg text-center">{data.msg}</p>
             )}
           </form>
 
@@ -105,7 +103,7 @@ export default function Login() {
         <div className="text-white text-center px-10">
           <h3 className="text-4xl font-bold mb-4">Smarter Diabetes Care</h3>
           <p className="text-lg text-blue-100">
-            Track glucose, get insights, and stay healthy with NurturaRx.
+            Track glucose, get insights, and stay healthy with Diabetes-care.
           </p>
         </div>
       </div>

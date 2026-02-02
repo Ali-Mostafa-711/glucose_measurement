@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* Logo + Address */}
         <div>
-          <h2 className="text-2xl font-bold text-white">NurturaRx</h2>
+          <h2 className="text-2xl font-bold text-white">Diabetes-care</h2>
           <p className="mt-3 text-sm leading-6">New York Street, US-242424</p>
           <p className="mt-2 text-sm">Phone: +20 122 8099 652</p>
         </div>
@@ -69,7 +69,7 @@ export default function Footer() {
 
       {/* Bottom Section */}
       <div className="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-400">
-        © Copyright 2024, All Rights Reserved by NurturaRx Inc.
+        © Copyright 2024, All Rights Reserved by Diabetes-care Inc.
       </div>
     </footer>
   );

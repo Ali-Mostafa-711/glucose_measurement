@@ -11,7 +11,7 @@ export default function AboutUs() {
         </div>
         <div className="right flex flex-col gap-4 items-center justify-center flex-1">
           <p className="text-[#454545] text-[25px]">
-            At NurturaRx, our mission is to empower individuals living with
+            At Diabetes-care, our mission is to empower individuals living with
             diabetes by providing reliable health tools, trusted medication
             access, and personalized guidance. We are dedicated to improving
             everyday health through accurate glucose tracking, expert-approved
