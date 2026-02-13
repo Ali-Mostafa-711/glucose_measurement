@@ -36,9 +36,11 @@ export default function ReminderPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="bg-white p-8 rounded-xl shadow w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-4">Medication Reminder</h2>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-[#e0f4ff] to-[#ffffff] px-4">
+      <div className="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md animate-[fadeInUp_0.6s_ease-out]">
+        <h2 className="text-3xl font-bold mb-6 text-[#0643DD] text-center">
+          Medication Reminder
+        </h2>
 
         <input
           name="medicineName"
@@ -46,7 +48,7 @@ export default function ReminderPage() {
           onChange={handleChange}
           type="text"
           placeholder="Medication name"
-          className="w-full px-4 py-3 border rounded-md mb-4"
+          className="w-full px-4 py-3 border rounded-lg mb-4 focus:ring-2 focus:ring-[#0643DD] focus:outline-none transition hover:scale-[1.02]"
         />
 
         <input
@@ -54,21 +56,44 @@ export default function ReminderPage() {
           name="reminderTime"
           value={userData.reminderTime}
           onChange={handleChange}
-          className="w-full px-4 py-3 border rounded-md mb-4"
+          className="w-full px-4 py-3 border rounded-lg mb-6 focus:ring-2 focus:ring-[#0643DD] focus:outline-none transition hover:scale-[1.02]"
         />
 
         <button
           onClick={handleSubmit}
-          className="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 transition"
+          className="w-full bg-[#0643DD] text-white py-3 rounded-lg font-semibold hover:bg-[#0537b8] transition hover:scale-[1.03]"
         >
           Save Reminder
         </button>
 
         {saved && (
-          <p className="mt-4 text-green-600 text-center">
+          <p className="mt-4 text-green-600 text-center animate-[fadeIn_0.5s_ease-out]">
             Reminder saved! You’ll receive an email notification 📧
           </p>
         )}
+
+        {/* Animations */}
+        <style jsx>{`
+          @keyframes fadeInUp {
+            from {
+              opacity: 0;
+              transform: translateY(30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+            }
+            to {
+              opacity: 1;
+            }
+          }
+        `}</style>
       </div>
     </div>
   );

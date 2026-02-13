@@ -27,74 +27,49 @@ export default function GlucosePage() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    if (name === "value") {
-      setInputError("");
-    }
-    setUserData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    if (name === "value") setInputError("");
+    setUserData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const glucoseValue = Number(userData.value);
-
-    if (
-      !userData.value ||
-      isNaN(glucoseValue) ||
-      glucoseValue < 50 ||
-      glucoseValue > 600
-    ) {
-      setInputError(
-        "invalid number , please write a number in range ( 50 , 600 )",
-      );
+    if (!userData.value || isNaN(glucoseValue) || glucoseValue < 50 || glucoseValue > 600) {
+      setInputError("Invalid number, please enter a value between 50 and 600");
       return;
     }
-
     setInputError("");
     refetch();
   };
 
   useEffect(() => {
-    if (data) {
-      console.log(" success:", data);
-    }
-    if (error) {
-      console.error(" error:", error);
-    }
+    if (data) console.log("Success:", data);
+    if (error) console.error("Error:", error);
   }, [data, error]);
 
-  if (typeof Window == "undefined") {
-    return null;
-  }
-
   return (
-    <div>
-      <FadeIn className="min-h-screen  flex items-center justify-center flex-col gap-10 bg-gray-50">
-        <SlideUp className="bg-white p-8 rounded-xl shadow w-full max-w-md">
-          <h2 className="text-2xl font-bold mb-4">Blood Glucose Measurement</h2>
+    <div className="min-h-screen flex flex-col items-center justify-center gap-10 bg-gradient-to-br from-[#e0f2ff] to-[#cde6ff] pb-20 pt-40 px-4">
+      <FadeIn className="w-full max-w-md">
+        <SlideUp className="bg-white p-8 rounded-2xl shadow-2xl border border-gray-100 transition-transform hover:scale-[1.02] duration-300">
+          <h2 className="text-2xl font-bold mb-6 text-[#0643DD] text-center">
+            Blood Glucose Measurement
+          </h2>
 
           <input
             type="number"
-            placeholder="Enter glucose (mg/dL)"
             name="value"
             value={userData.value}
             onChange={handleChange}
-            className="w-full px-4 py-3 border rounded-md mb-4"
+            placeholder="Enter glucose (mg/dL)"
+            className="w-full px-4 py-3 border rounded-lg mb-4 focus:ring-2 focus:ring-[#0643DD] focus:outline-none transition hover:scale-[1.01]"
           />
-          {inputError && (
-            <p className="text-red-500 text-sm mb-3 text-center">
-              {inputError}
-            </p>
-          )}
+          {inputError && <p className="text-red-500 text-sm mb-3 text-center">{inputError}</p>}
 
           <select
             name="time"
             value={userData.time}
             onChange={handleChange}
-            className="w-full px-4 py-3 border rounded-md mb-4"
+            className="w-full px-4 py-3 border rounded-lg mb-4 focus:ring-2 focus:ring-[#0643DD] focus:outline-none transition hover:scale-[1.01]"
           >
             <option value="fasting">Morning (fasting)</option>
             <option value="before_meal">Before Meal</option>
@@ -104,52 +79,48 @@ export default function GlucosePage() {
 
           <button
             onClick={handleSubmit}
-            className="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 transition"
             disabled={loading}
+            className="w-full bg-[#0643DD] text-white py-3 rounded-lg font-semibold hover:bg-[#0537b8] transition hover:scale-[1.02] disabled:opacity-50"
           >
             {loading ? "Checking..." : "Get Result"}
           </button>
 
           {error && (
-            <p className="mt-2 text-red-500 text-lg text-center">
-              {error.message || JSON.stringify(error)}
-            </p>
+            <p className="mt-2 text-red-500 text-center">{error.message || JSON.stringify(error)}</p>
           )}
         </SlideUp>
-
-        {data && !error && (
-          <ScaleIn className="results p-6 rounded-lg flex items-start justify-center gap-15 bg-white shadow ">
-            <div className="mt-6 text-center">
-              <h3 className="text-lg font-bold mb-3">Glucose Measurement</h3>
-              <ul className="space-y-3">
-                <GlucoseCard key={data.id} measurement={data.measurement} />
-              </ul>
-            </div>
-
-            {data?.meals && !error && (
-              <div className="mt-6 text-center">
-                <h3 className="text-lg font-bold mb-3">Recommended Meals 🍽️</h3>
-
-                <ul className="grid grid-cols-2 gap-4">
-                  {data.meals.map((meal, index) => (
-                    <li
-                      key={index}
-                      className="shadow p-4 pr-12 rounded-lg bg-gray-50"
-                    >
-                      <p className="font-semibold">{meal.name}</p>
-                      <p className="text-sm text-gray-600">
-                        {meal.description}
-                      </p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </ScaleIn>
-        )}
       </FadeIn>
 
-      <SlideUp>{data && !error && <Doctors />}</SlideUp>
+      {data && !error && (
+        <ScaleIn className="w-full max-w-4xl flex flex-col items-center gap-10">
+          <div className="bg-white shadow-xl rounded-2xl p-6 w-full transition hover:scale-[1.01]">
+            <h3 className="text-xl font-bold mb-4 text-center text-[#0643DD]">Glucose Measurement</h3>
+            <ul className="space-y-3">
+              <GlucoseCard key={data.id} measurement={data.measurement} />
+            </ul>
+          </div>
+
+          {data.meals && (
+            <div className="bg-white shadow-xl rounded-2xl p-6 w-full transition hover:scale-[1.01]">
+              <h3 className="text-xl font-bold mb-4 text-center text-[#0643DD]">
+                Recommended Meals 🍽️
+              </h3>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {data.meals.map((meal, index) => (
+                  <li key={index} className="shadow p-4 rounded-lg bg-gray-50 hover:scale-[1.02] transition">
+                    <p className="font-semibold">{meal.name}</p>
+                    <p className="text-sm text-gray-600">{meal.description}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </ScaleIn>
+      )}
+
+      <SlideUp>
+        {data && !error && <Doctors />}
+      </SlideUp>
     </div>
   );
 }

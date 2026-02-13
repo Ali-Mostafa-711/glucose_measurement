@@ -14,12 +14,20 @@ export default function ProductCard({ img, title, description, isDoctor }) {
   return (
     <Card sx={{ maxWidth: 350, boxShadow: 3 }}>
       <CardActionArea>
-        <CardMedia
-          component="img"
-          height="100"
-          image={img}
-          alt="green iguana"
-        />
+        <div style={{ overflow: "hidden" }}>
+          <CardMedia
+            component="img"
+            height="200"
+            image={img}
+            alt={title}
+            sx={{
+              transition: "transform 0.4s ease",
+              "&:hover": {
+                transform: "scale(1.1)",
+              },
+            }}
+          />
+        </div>
         <CardContent>
           <Typography
             gutterBottom
@@ -38,10 +46,12 @@ export default function ProductCard({ img, title, description, isDoctor }) {
       </CardActionArea>
       <CardActions>
         {!isDoctor && (
-        <Button
+          <Button
             size="small"
             color="primary"
-            onClick={() => addToCart({ img, title, description, price: 50, id: title })} // Mocking price and id for now
+            onClick={() =>
+              addToCart({ img, title, description, price: 50, id: title })
+            } // Mocking price and id for now
             sx={{
               color: "#0643DD",
               fontWeight: "bold",

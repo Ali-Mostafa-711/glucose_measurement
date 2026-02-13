@@ -37,7 +37,7 @@ const NavBar = () => {
           Products
         </a>
         <a
-          href={"https://wa.me/+201228099652"}
+          href={"https://wa.me/+201011944153"}
           target="_blank"
           className="hover:text-[#0643dda2] text-[20px] font-semibold duration-300 cursor-pointer hover:mx-1.5"
         >

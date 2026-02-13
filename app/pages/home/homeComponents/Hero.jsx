@@ -38,7 +38,7 @@ export default function Hero() {
             <FaArrowRight />
           </Link>
           <Link
-            href={"https://wa.me/+201228099652"}
+            href={"https://wa.me/+201011944153"}
             target="_blank"
             className="bg-blue-500 text-white px-8 py-4 rounded-md flex items-center justify-center gap-2 hover:bg-[#0643DD] hover:text-white hover:gap-4 duration-300 cursor-pointer"
           >

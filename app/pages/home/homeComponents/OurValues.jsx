@@ -3,10 +3,10 @@ import React from "react";
 
 const OurValues = () => {
   return (
-    <div className="values bg-[#002278] text-white flex flex-col items-center justify-center py-20 px-80 gap-10">
+    <div className="values bg-[#002278] text-white flex flex-col items-center justify-center py-20 px-80 gap-10" id="values">  
       <h1 className="text-5xl font-bold">Our Values</h1>
       <div className="values-list grid grid-cols-2 gap-10">
-        <div className="value-item  bg-white rounded-lg flex items-start justify-center text-center p-10 gap-4">
+        <div className="value-item  bg-white rounded-lg flex items-start justify-center text-center p-10 gap-4 hover:scale-105 transition-all duration-300">
           <Image src={"/Vector.png"} width={70} height={60} alt="img" />
           <div className="text flex flex-col items-start justify-center gap-4">
             <h2 className="text-2xl text-[#044AFC] font-semibold">Quality</h2>
@@ -16,7 +16,7 @@ const OurValues = () => {
             </p>
           </div>
         </div>
-        <div className="value-item  bg-white rounded-lg flex items-start justify-center text-center p-10 gap-4">
+        <div className="value-item  bg-white rounded-lg flex items-start justify-center text-center p-10 gap-4 hover:scale-105 transition-all duration-300">
           <Image src={"/Value Icon.png"} width={70} height={60} alt="img" />
           <div className="text flex flex-col items-start justify-center gap-4">
             <h2 className="text-2xl text-[#044AFC] font-semibold">Integrity</h2>
@@ -26,7 +26,7 @@ const OurValues = () => {
             </p>
           </div>
         </div>
-        <div className="value-item  bg-white rounded-lg flex items-start justify-center text-center p-10 gap-4">
+        <div className="value-item  bg-white rounded-lg flex items-start justify-center text-center p-10 gap-4 hover:scale-105 transition-all duration-300">
           <Image src={"/fi_1342014.png"} width={70} height={60} alt="img" />
           <div className="text flex flex-col items-start justify-center gap-4">
             <h2 className="text-2xl text-[#044AFC] font-semibold">
@@ -38,7 +38,7 @@ const OurValues = () => {
             </p>
           </div>
         </div>
-        <div className="value-item  bg-white rounded-lg flex items-start justify-center text-center p-10 gap-4">
+        <div className="value-item  bg-white rounded-lg flex items-start justify-center text-center p-10 gap-4 hover:scale-105 transition-all duration-300">
           <Image src={"/fi_11245130.png"} width={70} height={60} alt="img" />
           <div className="text flex flex-col items-start justify-center gap-4">
             <h2 className="text-2xl text-[#044AFC] font-semibold">
