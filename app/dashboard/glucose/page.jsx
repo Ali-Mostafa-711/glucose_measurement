@@ -4,8 +4,12 @@ import GlucoseCard from "@/app/items/cards/GlucoseCard";
 import useAxios from "@/app/items/hooks/useAxios";
 import Doctors from "@/app/pages/about/aboutComponents/Doctors";
 import { useEffect, useState } from "react";
+import FadeIn from "@/app/components/animations/FadeIn";
+import SlideUp from "@/app/components/animations/SlideUp";
+import ScaleIn from "@/app/components/animations/ScaleIn";
 
 export default function GlucosePage() {
+  const [inputError, setInputError] = useState("");
   const [userData, setUserData] = useState({
     value: "",
     time: "fasting",
@@ -23,6 +27,9 @@ export default function GlucosePage() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    if (name === "value") {
+      setInputError("");
+    }
     setUserData((prev) => ({
       ...prev,
       [name]: value,
@@ -31,7 +38,23 @@ export default function GlucosePage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    refetch(); // هنا بنعمل request
+
+    const glucoseValue = Number(userData.value);
+
+    if (
+      !userData.value ||
+      isNaN(glucoseValue) ||
+      glucoseValue < 50 ||
+      glucoseValue > 600
+    ) {
+      setInputError(
+        "invalid number , please write a number in range ( 50 , 600 )",
+      );
+      return;
+    }
+
+    setInputError("");
+    refetch();
   };
 
   useEffect(() => {
@@ -49,8 +72,8 @@ export default function GlucosePage() {
 
   return (
     <div>
-      <div className="min-h-screen  flex items-center justify-center flex-col gap-10 bg-gray-50">
-        <div className="bg-white p-8 rounded-xl shadow w-full max-w-md">
+      <FadeIn className="min-h-screen  flex items-center justify-center flex-col gap-10 bg-gray-50">
+        <SlideUp className="bg-white p-8 rounded-xl shadow w-full max-w-md">
           <h2 className="text-2xl font-bold mb-4">Blood Glucose Measurement</h2>
 
           <input
@@ -61,6 +84,11 @@ export default function GlucosePage() {
             onChange={handleChange}
             className="w-full px-4 py-3 border rounded-md mb-4"
           />
+          {inputError && (
+            <p className="text-red-500 text-sm mb-3 text-center">
+              {inputError}
+            </p>
+          )}
 
           <select
             name="time"
@@ -87,10 +115,10 @@ export default function GlucosePage() {
               {error.message || JSON.stringify(error)}
             </p>
           )}
-        </div>
+        </SlideUp>
 
         {data && !error && (
-          <div className="results p-6 rounded-lg flex items-start justify-center gap-15 bg-white shadow ">
+          <ScaleIn className="results p-6 rounded-lg flex items-start justify-center gap-15 bg-white shadow ">
             <div className="mt-6 text-center">
               <h3 className="text-lg font-bold mb-3">Glucose Measurement</h3>
               <ul className="space-y-3">
@@ -117,11 +145,11 @@ export default function GlucosePage() {
                 </ul>
               </div>
             )}
-          </div>
+          </ScaleIn>
         )}
-      </div>
+      </FadeIn>
 
-      {data && !error && <Doctors />}
+      <SlideUp>{data && !error && <Doctors />}</SlideUp>
     </div>
   );
 }

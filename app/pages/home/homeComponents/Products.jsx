@@ -1,4 +1,5 @@
 import ProductCard from "@/app/items/cards/ProductCard";
+import Link from "next/link";
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 
@@ -62,10 +63,10 @@ const Products = () => {
           id={"six"}
         />
       </div>
-      <button className="bg-[#0643DD] text-white px-6 py-4 rounded-2xl flex items-center justify-center gap-2 hover:bg-blue-500  hover:text-white hover:gap-4 duration-300 cursor-pointer">
+      <Link href={"/pages/products"} className="bg-[#0643DD] text-white px-6 py-4 rounded-2xl flex items-center justify-center gap-2 hover:bg-blue-500  hover:text-white hover:gap-4 duration-300 cursor-pointer">
         View More Products
         <FaArrowRight />
-      </button>
+      </Link >
     </div>
   );
 };

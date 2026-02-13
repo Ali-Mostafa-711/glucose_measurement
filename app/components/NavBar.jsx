@@ -18,44 +18,44 @@ const NavBar = () => {
 
       {/* Links */}
       <div className="links flex gap-6 items-center justify-center">
-        <Link
+        <a
           href={"/pages/home"}
           className="hover:text-[#0643dda2] text-[20px] font-semibold duration-300 cursor-pointer hover:mx-1.5"
         >
           Home
-        </Link>
-        <Link
+        </a>
+        <a
           href={"/pages/about"}
           className="hover:text-[#0643dda2] text-[20px] font-semibold duration-300 cursor-pointer hover:mx-1.5"
         >
           About
-        </Link>
-        <Link
+        </a>
+        <a
           href={"/pages/products"}
           className="hover:text-[#0643dda2] text-[20px] font-semibold duration-300 cursor-pointer hover:mx-1.5"
         >
           Products
-        </Link>
-        <Link
+        </a>
+        <a
           href={"https://wa.me/+201228099652"}
           target="_blank"
           className="hover:text-[#0643dda2] text-[20px] font-semibold duration-300 cursor-pointer hover:mx-1.5"
         >
           Contact
-        </Link>
+        </a>
       </div>
 
       {/* Resume Button */}
 
-      <Link
+      <a
         href={"/auth/login"}
         className=" text-[#0643DD] px-6 py-4 rounded-md flex items-center justify-center gap-2 hover:bg-[#0643DD] hover:text-white hover:gap-4 duration-300 cursor-pointer"
       >
         Start Glucose Measurement
         <FaArrowRight />
-      </Link>
+      </a>
 
-      <Link
+      {/* <Link
         href={"/cart"}
         className="relative text-[#0643DD] text-2xl hover:text-[#0643dda2] duration-300 cursor-pointer flex items-center"
       >
@@ -65,7 +65,7 @@ const NavBar = () => {
             {cartCount}
           </span>
         )}
-      </Link>
+      </Link> */}
     </div>
   );
 };

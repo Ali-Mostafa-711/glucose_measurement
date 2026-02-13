@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 
 export default function AboutUs() {
@@ -19,10 +20,10 @@ export default function AboutUs() {
             high-quality medications. Our commitment is to help every user live
             a healthier, more confident, and well-managed life.
           </p>
-          <button className="self-start bg-[#0643DD] text-white px-6 py-4 rounded-2xl flex items-center justify-center gap-2 hover:bg-blue-500  hover:text-white hover:gap-4 duration-300 cursor-pointer">
+          <Link href={'/pages/about'} className="self-start bg-[#0643DD] text-white px-6 py-4 rounded-2xl flex items-center justify-center gap-2 hover:bg-blue-500  hover:text-white hover:gap-4 duration-300 cursor-pointer">
             Learn More
             <FaArrowRight />
-          </button>
+          </Link>
         </div>
       </div>
     </div>

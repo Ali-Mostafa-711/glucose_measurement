@@ -1,9 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Contact = () => {
   return (
-    <div className="contact relative w-auto h-64 rounded-2xl bg-gray-100 flex items-center justify-center overflow-hidden">
+    <div className="contact relative w-auto h-64 rounded-2xl bg-white flex items-center justify-center overflow-hidden">
       <Image
         src={"/CTA.svg"}
         width={100}
@@ -18,9 +19,13 @@ const Contact = () => {
           features, trials, pricing, need a demo, or anything else, our team is
           ready to answer all your questions.
         </p>
-        <button className="bg-blue-500 cursor-pointer text-white px-6 py-3 rounded-full hover:bg-blue-600 transition duration-300">
+        <Link
+          href={"https://wa.me/+201228099652"}
+          target="_blank"
+          className="bg-blue-500 cursor-pointer text-white px-6 py-3 rounded-full hover:bg-blue-600 transition duration-300"
+        >
           Contact Us
-        </button>
+        </Link>
       </div>
     </div>
   );
