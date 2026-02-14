@@ -70,6 +70,18 @@ const Products = () => {
           <h1 className="text-[#0643DD] text-5xl font-bold">Products</h1>
         </SlideUp>
 
+        {/* Medical Warning */}
+        <FadeIn delay={0.15}>
+          <div className="max-w-3xl bg-red-50 border border-red-200 text-red-800 px-6 py-4 rounded-2xl text-center">
+            <h3 className="font-bold text-lg mb-1">⚠️ Medical Warning</h3>
+            <p className="text-sm leading-relaxed">
+              Do <span className="font-semibold">NOT</span> use or purchase any
+              diabetes medication without consulting a qualified doctor.
+              Self-medication may cause serious health complications.
+            </p>
+          </div>
+        </FadeIn>
+
         {/* Search Bar */}
         <FadeIn delay={0.2}>
           <input

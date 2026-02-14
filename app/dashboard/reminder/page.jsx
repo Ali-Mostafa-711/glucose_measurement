@@ -37,7 +37,7 @@ export default function ReminderPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-[#e0f4ff] to-[#ffffff] px-4">
-      <div className="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md animate-[fadeInUp_0.6s_ease-out]">
+      <div className="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md animate-[fadeInUp_0.6s_ease-out] scale-120">
         <h2 className="text-3xl font-bold mb-6 text-[#0643DD] text-center">
           Medication Reminder
         </h2>

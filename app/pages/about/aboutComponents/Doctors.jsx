@@ -9,9 +9,9 @@ const Doctors = () => {
       <div className="product-list grid grid-cols-3 gap-20">
         <DoctorsCard
           img={"/d1.jpeg"}
-          title={"Mr. Mina wasef"}
+          title={"Dr. Mina wasef"}
           description={
-            "Mr. Mina wasef, an accomplished engineer, brings a unique blend of technical expertise and entrepreneurial spirit to the team. His insight and dedication to excellence have been instrumental in shaping the company's direction and success."
+            "Dr. Mina wasef, an accomplished Doctor, brings a unique blend of technical expertise and entrepreneurial spirit to the team. His insight and dedication to excellence have been instrumental in shaping the company's direction and success."
           }
           id={"one"}
         />
@@ -24,10 +24,10 @@ const Doctors = () => {
           id={"two"}
         />
         <DoctorsCard
-          img={'/d3.jpeg'}
-          title={"Mr. Mohamed Fathy"}
+          img={"/d3.jpeg"}
+          title={"Dr. Mohamed Fathy"}
           description={
-            "Mr. Mohamed Fathy, an experienced engineer, comes with a sharp focus on operational excellence. His strong background ensures that the company's operations are streamlined and aligned with the highest standards of quality."
+            "Dr. Mohamed Fathy, an experienced Doctor, comes with a sharp focus on operational excellence. His strong background ensures that the company's operations are streamlined and aligned with the highest standards of quality."
           }
           id={"three"}
         />

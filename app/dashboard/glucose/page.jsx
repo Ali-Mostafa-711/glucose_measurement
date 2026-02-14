@@ -48,9 +48,9 @@ export default function GlucosePage() {
   }, [data, error]);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center gap-10 bg-gradient-to-br from-[#e0f2ff] to-[#cde6ff] pb-20 pt-40 px-4">
+    <div className="min-h-screen flex flex-col items-center justify-center gap-10 bg-gradient-to-br from-[#e0f2ff] to-[#cde6ff] pb-20 pt-40 px-4 ">
       <FadeIn className="w-full max-w-md">
-        <SlideUp className="bg-white p-8 rounded-2xl shadow-2xl border border-gray-100 transition-transform hover:scale-[1.02] duration-300">
+        <SlideUp className="bg-white p-8 rounded-2xl shadow-2xl border border-gray-100 transition-transform hover:scale-[1.02] duration-300 scale-110">
           <h2 className="text-2xl font-bold mb-6 text-[#0643DD] text-center">
             Blood Glucose Measurement
           </h2>

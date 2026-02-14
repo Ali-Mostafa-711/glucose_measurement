@@ -32,9 +32,9 @@ export default function HomePage() {
         </StaggerItem>
       </StaggerContainer>
 
-      <ScaleIn className="w-full" duration={0.6}>
+      {/* <ScaleIn className="w-full" duration={0.6}>
         <OurValues />
-      </ScaleIn>
+      </ScaleIn> */}
       <SlideUp className="w-full">
         <Faq />
       </SlideUp>
