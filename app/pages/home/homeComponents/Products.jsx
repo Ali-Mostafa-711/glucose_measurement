@@ -4,7 +4,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 const Products = () => {
   return (
-    <div className="products-page flex flex-col items-center justify-center gap-10 py-40">
+    <div className="products-page flex flex-col items-center justify-center -mt-25 gap-10 py-40">
       <h1 className="text-[#0643DD] text-5xl font-bold">
         Diabetes Medications
       </h1>

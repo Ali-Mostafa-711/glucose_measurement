@@ -24,9 +24,9 @@ export default function HomePage() {
       </SlideUp>
 
       <StaggerContainer className="w-full" staggerChildren={0.2}>
-        <StaggerItem>
+        {/* <StaggerItem>
           <WhyUs />
-        </StaggerItem>
+        </StaggerItem> */}
         <StaggerItem>
           <Products />
         </StaggerItem>

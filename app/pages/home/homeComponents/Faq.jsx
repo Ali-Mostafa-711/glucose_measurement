@@ -36,7 +36,7 @@ export default function Faq() {
   ];
 
   return (
-    <div className="w-full mx-auto my-16 px-4 flex flex-col items-center gap-8 py-20" id="faq">
+    <div className="w-full mx-auto my-16 px-4 flex flex-col items-center gap-8 py-10 -mt-20" id="faq">
       
       <span className="flex text-5xl items-center gap-3 text-blue-600 font-semibold tracking-wide">
         {/* <div className="w-2 h-2 bg-blue-600 rounded-full" /> */}
