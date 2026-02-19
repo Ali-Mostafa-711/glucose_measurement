@@ -9,7 +9,7 @@ import {
 } from "../../components/animations/StaggerContainer";
 import SlideUp from "../../components/animations/SlideUp";
 import FadeIn from "../../components/animations/FadeIn";
-import { useCart } from "context/CartContext";
+import { useCart } from "../../../context/CartContext";
 
 const Products = () => {
   const [search, setSearch] = useState("");

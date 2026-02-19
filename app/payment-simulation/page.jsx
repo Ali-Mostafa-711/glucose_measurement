@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { useCart } from "context/CartContext";
+import { useCart } from "../../context/CartContext";
 import {
   Button,
   TextField,

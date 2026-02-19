@@ -7,7 +7,7 @@ import AboutUs from "./aboutComponents/AboutUs";
 import {
   StaggerContainer,
   StaggerItem,
-} from "@/app/components/animations/StaggerContainer";
+} from "../../components/animations/StaggerContainer";
 
 const AboutPage = () => {
   return (

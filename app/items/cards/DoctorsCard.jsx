@@ -3,13 +3,9 @@
 import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
-import { IoCartOutline } from "react-icons/io5";
-import { useCart } from "context/CartContext";
 import Box from "@mui/material/Box";
 
-export default function DoctorsCard({ img, title, description, isDoctor }) {
-  const { addToCart } = useCart();
+export default function DoctorsCard({ img, title, description }) {
 
   return (
     <Card

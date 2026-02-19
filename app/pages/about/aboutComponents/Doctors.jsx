@@ -1,6 +1,5 @@
-import DoctorsCard from "@/app/items/cards/DoctorsCard";
+import DoctorsCard from "../../../items/cards/DoctorsCard";
 import React from "react";
-import { FaArrowRight } from "react-icons/fa";
 
 const Doctors = () => {
   return (
@@ -32,10 +31,7 @@ const Doctors = () => {
           id={"three"}
         />
       </div>
-      {/* <button className="bg-[#0643DD] text-white px-6 py-4 rounded-2xl flex items-center justify-center gap-2 hover:bg-blue-500  hover:text-white hover:gap-4 duration-300 cursor-pointer">
-        View More Doctors
-        <FaArrowRight />
-      </button> */}
+   
     </div>
   );
 };
