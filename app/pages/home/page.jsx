@@ -4,14 +4,14 @@ import Hero from "./homeComponents/Hero";
 import OurValues from "./homeComponents/OurValues";
 import Products from "./homeComponents/Products";
 import AboutUs from "./homeComponents/aboutUS";
-import { WhyUs } from "./homeComponents/whyUs";
-import FadeIn from "@/app/components/animations/FadeIn";
-import SlideUp from "@/app/components/animations/SlideUp";
-import ScaleIn from "@/app/components/animations/ScaleIn";
+import BloodSugarSection from "./homeComponents/Measure";
+import FadeIn from "../../components/animations/FadeIn";
+import SlideUp from "../../components/animations/SlideUp";
+import ScaleIn from "../../components/animations/ScaleIn";
 import {
   StaggerContainer,
   StaggerItem,
-} from "@/app/components/animations/StaggerContainer";
+} from "../../components/animations/StaggerContainer";
 
 export default function HomePage() {
   return (
@@ -32,9 +32,9 @@ export default function HomePage() {
         </StaggerItem>
       </StaggerContainer>
 
-      {/* <ScaleIn className="w-full" duration={0.6}>
-        <OurValues />
-      </ScaleIn> */}
+      <ScaleIn className="w-full" duration={0.6}>
+        <BloodSugarSection />
+      </ScaleIn>
       <SlideUp className="w-full">
         <Faq />
       </SlideUp>

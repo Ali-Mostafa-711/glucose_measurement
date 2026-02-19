@@ -1,4 +1,5 @@
 "use client";
+
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -7,10 +8,16 @@ import Button from "@mui/material/Button";
 import CardActionArea from "@mui/material/CardActionArea";
 import CardActions from "@mui/material/CardActions";
 import { IoCartOutline } from "react-icons/io5";
-import { useCart } from "@/context/CartContext";
 
-export default function ProductCard({ img, title, description, isDoctor }) {
-  const { addToCart } = useCart();
+export default function ProductCard({
+  img,
+  title,
+  description,
+  price,
+  id,
+  category,
+  onBuy,
+}) {
   return (
     <Card sx={{ maxWidth: 350, boxShadow: 3 }}>
       <CardActionArea>
@@ -21,6 +28,9 @@ export default function ProductCard({ img, title, description, isDoctor }) {
             image={img}
             alt={title}
             sx={{
+              width: "30rem",
+              height: "15rem",
+              objectFit: "cover",
               transition: "transform 0.4s ease",
               "&:hover": {
                 transform: "scale(1.1)",
@@ -28,6 +38,7 @@ export default function ProductCard({ img, title, description, isDoctor }) {
             }}
           />
         </div>
+
         <CardContent>
           <Typography
             gutterBottom
@@ -36,34 +47,35 @@ export default function ProductCard({ img, title, description, isDoctor }) {
             color="#0643DD"
             fontWeight="bold"
           >
-            {title || "Joint Support"}
+            {title}
           </Typography>
-          <Typography variant="body2" sx={{ color: "text.secondary" }}>
-            {description ||
-              "Supports joint health and mobility with essential nutrients."}
+
+          <Typography variant="body2" sx={{ color: "text.secondary", mb: 1 }}>
+            {description}
+          </Typography>
+
+          {/* 💰 Price */}
+          <Typography variant="h6" fontWeight="bold" color="text.primary">
+            {price} EGP
           </Typography>
         </CardContent>
       </CardActionArea>
+
       <CardActions>
-        {!isDoctor && (
-          <Button
-            size="small"
-            color="primary"
-            onClick={() =>
-              addToCart({ img, title, description, price: 50, id: title })
-            } // Mocking price and id for now
-            sx={{
-              color: "#0643DD",
-              fontWeight: "bold",
-              display: "flex",
-              alignItems: "center",
-              gap: "5px",
-            }}
-          >
-            Add to Cart
-            <IoCartOutline className="text-2xl" />
-          </Button>
-        )}
+        <Button
+          size="small"
+          onClick={onBuy}
+          sx={{
+            color: "#0643DD",
+            fontWeight: "bold",
+            display: "flex",
+            alignItems: "center",
+            gap: "5px",
+          }}
+        >
+          Add to Cart
+          <IoCartOutline className="text-2xl" />
+        </Button>
       </CardActions>
     </Card>
   );

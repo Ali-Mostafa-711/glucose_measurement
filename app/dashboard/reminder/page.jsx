@@ -1,6 +1,6 @@
 "use client";
 
-import useAxios from "@/app/items/hooks/useAxios";
+import useAxios from "../../items/hooks/useAxios";
 import { useState } from "react";
 
 export default function ReminderPage() {

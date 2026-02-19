@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
-import TextReveal from "@/app/components/animations/TextReveal";
-import FadeIn from "@/app/components/animations/FadeIn";
-import SlideUp from "@/app/components/animations/SlideUp";
+import TextReveal from "../../../components/animations/TextReveal";
+import FadeIn from "../../../components/animations/FadeIn";
+import SlideUp from "../../../components/animations/SlideUp";
 
 export default function Hero() {
   return (
@@ -19,7 +19,8 @@ export default function Hero() {
       <div className="text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 translate-y-[50%] z-10 text-white flex flex-col items-center justify-center gap-4">
         <TextReveal
           text="“A NEW ERA IN MEDICINE”"
-          className="text-7xl font-bold"
+          className="text-7xl font-bold w-full "
+          
         />
         <FadeIn delay={0.8}>
           <p className="text-2xl text-zinc-200">

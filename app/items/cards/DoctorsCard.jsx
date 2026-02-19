@@ -5,7 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { IoCartOutline } from "react-icons/io5";
-import { useCart } from "@/context/CartContext";
+import { useCart } from "context/CartContext";
 import Box from "@mui/material/Box";
 
 export default function DoctorsCard({ img, title, description, isDoctor }) {

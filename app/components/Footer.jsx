@@ -125,7 +125,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-400">
-        © Copyright 2024, All Rights Reserved by Diabetes-care Inc.
+        © Copyright 2026, All Rights Reserved by Diabetes-care Inc.
       </div>
     </footer>
   );

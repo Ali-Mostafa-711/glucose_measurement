@@ -1,4 +1,4 @@
-import ProductCard from "@/app/items/cards/ProductCard";
+import ProductCard from "../../../items/cards/ProductCard";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 

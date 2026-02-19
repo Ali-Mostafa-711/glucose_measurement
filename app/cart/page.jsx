@@ -1,12 +1,21 @@
 "use client";
 import React from "react";
-import { useCart } from "@/context/CartContext";
-import { Button, IconButton, Typography, Box, Card, CardContent, CardMedia } from "@mui/material";
+import { useCart } from "context/CartContext";
+import {
+  Button,
+  IconButton,
+  Typography,
+  Box,
+  Card,
+  CardContent,
+  CardMedia,
+} from "@mui/material";
 import { IoAdd, IoRemove, IoTrashOutline } from "react-icons/io5";
 import Link from "next/link";
 
 const CartPage = () => {
-  const { cartItems, updateQuantity, removeFromCart, cartTotal, clearCart } = useCart();
+  const { cartItems, updateQuantity, removeFromCart, cartTotal, clearCart } =
+    useCart();
 
   if (cartItems.length === 0) {
     return (
@@ -28,11 +37,14 @@ const CartPage = () => {
       <Typography variant="h4" className="text-[#0643DD] font-bold mb-8">
         Shopping Cart
       </Typography>
-      
+
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 space-y-4">
           {cartItems.map((item) => (
-            <Card key={item.id} className="flex flex-col sm:flex-row items-center p-4 gap-4 shadow-md">
+            <Card
+              key={item.id}
+              className="flex flex-col sm:flex-row items-center p-4 gap-4 shadow-md"
+            >
               <CardMedia
                 component="img"
                 image={item.img}
@@ -48,22 +60,24 @@ const CartPage = () => {
                 </Typography>
                 <div className="flex items-center gap-4 mt-2">
                   <div className="flex items-center border rounded-md">
-                    <IconButton 
-                      size="small" 
+                    <IconButton
+                      size="small"
                       onClick={() => updateQuantity(item.id, item.quantity - 1)}
                     >
                       <IoRemove />
                     </IconButton>
-                    <Typography className="px-3 font-semibold">{item.quantity}</Typography>
-                    <IconButton 
-                      size="small" 
+                    <Typography className="px-3 font-semibold">
+                      {item.quantity}
+                    </Typography>
+                    <IconButton
+                      size="small"
                       onClick={() => updateQuantity(item.id, item.quantity + 1)}
                     >
                       <IoAdd />
                     </IconButton>
                   </div>
-                  <IconButton 
-                    color="error" 
+                  <IconButton
+                    color="error"
                     onClick={() => removeFromCart(item.id)}
                   >
                     <IoTrashOutline />
@@ -75,7 +89,9 @@ const CartPage = () => {
               </Typography>
             </Card>
           ))}
-          <Button color="error" onClick={clearCart}>Clear Cart</Button>
+          <Button color="error" onClick={clearCart}>
+            Clear Cart
+          </Button>
         </div>
 
         <div className="lg:col-span-1">
@@ -92,15 +108,17 @@ const CartPage = () => {
               <Typography>${(cartTotal * 0.1).toFixed(2)}</Typography>
             </div>
             <div className="border-t pt-4 flex justify-between mb-6">
-              <Typography variant="h6" className="font-bold">Total</Typography>
+              <Typography variant="h6" className="font-bold">
+                Total
+              </Typography>
               <Typography variant="h6" className="font-bold text-[#0643DD]">
                 ${(cartTotal * 1.1).toFixed(2)}
               </Typography>
             </div>
             <Link href="/payment-simulation">
-              <Button 
-                variant="contained" 
-                fullWidth 
+              <Button
+                variant="contained"
+                fullWidth
                 size="large"
                 sx={{ backgroundColor: "#0643DD", fontWeight: "bold" }}
               >

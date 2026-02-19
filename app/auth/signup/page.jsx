@@ -1,5 +1,5 @@
 "use client";
-import useAxios from "@/app/items/hooks/useAxios";
+import useAxios from "../../items/hooks/useAxios";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";

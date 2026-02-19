@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import FadeIn from "@/app/components/animations/FadeIn";
-import SlideUp from "@/app/components/animations/SlideUp";
+import FadeIn from "../components/animations/FadeIn";
+import SlideUp from "../components/animations/SlideUp";
 
 export default function Dashboard() {
   return (

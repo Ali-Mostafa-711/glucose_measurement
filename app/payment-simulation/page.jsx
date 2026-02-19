@@ -1,7 +1,15 @@
 "use client";
 import React, { useState } from "react";
-import { useCart } from "@/context/CartContext";
-import { Button, TextField, Typography, Box, Card, CircularProgress, Alert } from "@mui/material";
+import { useCart } from "context/CartContext";
+import {
+  Button,
+  TextField,
+  Typography,
+  Box,
+  Card,
+  CircularProgress,
+  Alert,
+} from "@mui/material";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
@@ -52,22 +60,31 @@ const PaymentSimulationPage = () => {
   return (
     <Box className="min-h-screen pt-28 pb-10 px-4 bg-gray-50 flex justify-center">
       <Card className="max-w-md w-full p-8 shadow-xl">
-        <Typography variant="h4" className="text-[#0643DD] font-bold mb-6 text-center">
+        <Typography
+          variant="h4"
+          className="text-[#0643DD] font-bold mb-6 text-center"
+        >
           Secure Payment
         </Typography>
-        
+
         <div className="mb-6 flex justify-center">
-             <Image src="/payment-methods.png" width={200} height={50} alt="Payment Methods" className="object-contain" />
-             {/* Note: Ensure this image exists or use text/icons if not available. For now relying on alt text or placeholder if image missing */}
+          <Image
+            src="/payment-methods.png"
+            width={200}
+            height={50}
+            alt="Payment Methods"
+            className="object-contain"
+          />
+          {/* Note: Ensure this image exists or use text/icons if not available. For now relying on alt text or placeholder if image missing */}
         </div>
-        
+
         <Box className="mb-6 p-4 bg-blue-50 rounded-lg">
-           <div className="flex justify-between">
-              <Typography className="font-semibold">Total Amount:</Typography>
-              <Typography className="font-bold text-[#0643DD] text-xl">
-                ${(cartTotal * 1.1).toFixed(2)}
-              </Typography>
-           </div>
+          <div className="flex justify-between">
+            <Typography className="font-semibold">Total Amount:</Typography>
+            <Typography className="font-bold text-[#0643DD] text-xl">
+              ${(cartTotal * 1.1).toFixed(2)}
+            </Typography>
+          </div>
         </Box>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -116,14 +133,18 @@ const PaymentSimulationPage = () => {
             fullWidth
             size="large"
             disabled={loading}
-            sx={{ 
-              backgroundColor: "#0643DD", 
+            sx={{
+              backgroundColor: "#0643DD",
               fontWeight: "bold",
               marginTop: 2,
-              height: "50px"
+              height: "50px",
             }}
           >
-            {loading ? <CircularProgress size={24} color="inherit" /> : `Pay $${(cartTotal * 1.1).toFixed(2)}`}
+            {loading ? (
+              <CircularProgress size={24} color="inherit" />
+            ) : (
+              `Pay $${(cartTotal * 1.1).toFixed(2)}`
+            )}
           </Button>
         </form>
       </Card>
