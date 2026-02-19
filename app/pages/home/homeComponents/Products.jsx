@@ -19,6 +19,7 @@ const Products = () => {
           }
           isDoctor={false}
           id={"metformin"}
+          price={30}
         />
         <ProductCard
           img={
@@ -30,6 +31,7 @@ const Products = () => {
           }
           isDoctor={false}
           id={"glipizide"}
+          price={70}
         />
         <ProductCard
           img={"https://media.gettyimages.com/id/2228094865/photo/portugal-regulates-prescription-of-glp-1-receptor-agonist-class-such-as-ozempic-as-demand.webp?s=2048x2048&w=gi&k=20&c=i0YSF4Rfp1DfpKQvwXZLtrX3OeL_9lbWAoaRo1JM9sU="}
@@ -39,6 +41,7 @@ const Products = () => {
           }
           isDoctor={false}
           id={"liraglutide"}
+          price={150}
         />
         <ProductCard
           img={"https://www.clinicaltrialsarena.com/wp-content/uploads/sites/22/2014/01/Image-1-Forxiga-dapagliflozin-shutterstock_2401535759.jpg"}
@@ -48,6 +51,7 @@ const Products = () => {
           }
           isDoctor={false}
           id={"dapagliflozin"}
+          price={250}
         />
         <ProductCard
           img={"https://media.gettyimages.com/id/2150938026/photo/human-crowd-surrounding-an-injectable-insulin-bottle-on-purple-background.webp?s=2048x2048&w=gi&k=20&c=vkrLbbXPxtm48P0z7Q09GAhh66kAW4GoRbRiXWX11sc="}
@@ -57,6 +61,7 @@ const Products = () => {
           }
           isDoctor={false}
           id={"insulin"}
+          price={70}
         />
         <ProductCard
           img={"https://media.gettyimages.com/id/1432982374/photo/sitagliptin-pill-conceptual-image.webp?s=2048x2048&w=gi&k=20&c=BAu5DpylVlz0yE17njLiLCEpiG1rdUrQHTwWNpTL2nY="}
@@ -66,6 +71,7 @@ const Products = () => {
           }
           isDoctor={false}
           id={"sitagliptin"}
+          price={60}
         />
       </div>
 

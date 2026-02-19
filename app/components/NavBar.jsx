@@ -1,13 +1,13 @@
 "use client";
 import { useCart } from "../../context/CartContext";
 import Image from "next/image";
-// import Link from "next/link";
+import Link from "next/link";
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
-// import { IoCartOutline } from "react-icons/io5";
+import { IoCartOutline } from "react-icons/io5";
 
 const NavBar = () => {
-  // const { cartCount } = useCart();
+  const { cartCount } = useCart();
   return (
     <div className="NavBar py-3 text-[#0643DD] flex justify-evenly items-center fixed top-0 left-0 w-full z-50 border-b border-black/10  bg-white">
       {/* Logo */}
@@ -55,7 +55,17 @@ const NavBar = () => {
         <FaArrowRight />
       </a>
 
-  
+      <Link
+        href={"/cart"}
+        className="relative text-[#0643DD] text-2xl hover:text-[#0643dda2] duration-300 cursor-pointer flex items-center"
+      >
+        <IoCartOutline />
+        {cartCount > 0 && (
+          <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+            {cartCount}
+          </span>
+        )}
+      </Link>
     </div>
   );
 };
