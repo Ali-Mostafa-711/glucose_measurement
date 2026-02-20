@@ -28,8 +28,8 @@ export default function Login() {
     if (name === "password") {
       if (value.length > 20) return;
 
-      if (value.length < 8) {
-        setPasswordError("Password must be at least 8 characters");
+      if (value.length < 5) {
+        setPasswordError("Password must be at least 5 characters");
       } else {
         setPasswordError("");
       }
@@ -44,8 +44,8 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (userData.password.length < 8) {
-      setPasswordError("Password must be at least 8 characters");
+    if (userData.password.length < 5) {
+      setPasswordError("Password must be at least 5 characters");
       return;
     }
 
@@ -105,10 +105,19 @@ export default function Login() {
                 onChange={handleChange}
                 type="password"
                 maxLength={20}
-                placeholder="Password (8–20 chars)"
+                placeholder="Password (6–20 chars)"
                 required
                 className="w-full px-4 py-3 border rounded-lg"
               />
+
+              <p className="text-sm text-right">
+                <Link
+                  href="/auth/forgot-password"
+                  className="text-[#0643DD] hover:underline"
+                >
+                  Forgot password?
+                </Link>
+              </p>
 
               {passwordError && (
                 <p className="text-red-500 text-sm">{passwordError}</p>
@@ -137,6 +146,7 @@ export default function Login() {
                 Sign up
               </Link>
             </p>
+     
           </div>
         </div>
       </div>

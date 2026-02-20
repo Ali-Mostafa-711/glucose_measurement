@@ -34,7 +34,9 @@ const Products = () => {
           price={70}
         />
         <ProductCard
-          img={"https://media.gettyimages.com/id/2228094865/photo/portugal-regulates-prescription-of-glp-1-receptor-agonist-class-such-as-ozempic-as-demand.webp?s=2048x2048&w=gi&k=20&c=i0YSF4Rfp1DfpKQvwXZLtrX3OeL_9lbWAoaRo1JM9sU="}
+          img={
+            "https://media.gettyimages.com/id/2228094865/photo/portugal-regulates-prescription-of-glp-1-receptor-agonist-class-such-as-ozempic-as-demand.webp?s=2048x2048&w=gi&k=20&c=i0YSF4Rfp1DfpKQvwXZLtrX3OeL_9lbWAoaRo1JM9sU="
+          }
           title={"Liraglutide (Victoza)"}
           description={
             "A GLP-1 receptor agonist that helps lower blood sugar and supports weight loss."
@@ -44,7 +46,9 @@ const Products = () => {
           price={150}
         />
         <ProductCard
-          img={"https://www.clinicaltrialsarena.com/wp-content/uploads/sites/22/2014/01/Image-1-Forxiga-dapagliflozin-shutterstock_2401535759.jpg"}
+          img={
+            "https://www.clinicaltrialsarena.com/wp-content/uploads/sites/22/2014/01/Image-1-Forxiga-dapagliflozin-shutterstock_2401535759.jpg"
+          }
           title={"Dapagliflozin (Forxiga)"}
           description={
             "SGLT2 inhibitor that helps the kidneys remove glucose from the bloodstream."
@@ -54,7 +58,9 @@ const Products = () => {
           price={250}
         />
         <ProductCard
-          img={"https://media.gettyimages.com/id/2150938026/photo/human-crowd-surrounding-an-injectable-insulin-bottle-on-purple-background.webp?s=2048x2048&w=gi&k=20&c=vkrLbbXPxtm48P0z7Q09GAhh66kAW4GoRbRiXWX11sc="}
+          img={
+            "https://media.gettyimages.com/id/2150938026/photo/human-crowd-surrounding-an-injectable-insulin-bottle-on-purple-background.webp?s=2048x2048&w=gi&k=20&c=vkrLbbXPxtm48P0z7Q09GAhh66kAW4GoRbRiXWX11sc="
+          }
           title={"Insulin"}
           description={
             "Essential for type 1 diabetes and advanced type 2 diabetes to regulate blood glucose."
@@ -64,7 +70,9 @@ const Products = () => {
           price={70}
         />
         <ProductCard
-          img={"https://media.gettyimages.com/id/1432982374/photo/sitagliptin-pill-conceptual-image.webp?s=2048x2048&w=gi&k=20&c=BAu5DpylVlz0yE17njLiLCEpiG1rdUrQHTwWNpTL2nY="}
+          img={
+            "https://media.gettyimages.com/id/1432982374/photo/sitagliptin-pill-conceptual-image.webp?s=2048x2048&w=gi&k=20&c=BAu5DpylVlz0yE17njLiLCEpiG1rdUrQHTwWNpTL2nY="
+          }
           title={"Sitagliptin (Januvia)"}
           description={
             "DPP-4 inhibitor that helps increase insulin release and decrease glucagon levels."
