@@ -55,7 +55,7 @@ const NavBar = () => {
         <FaArrowRight />
       </a>
 
-      <Link
+      {/* <Link
         href={"/cart"}
         className="relative text-[#0643DD] text-2xl hover:text-[#0643dda2] duration-300 cursor-pointer flex items-center"
       >
@@ -65,7 +65,7 @@ const NavBar = () => {
             {cartCount}
           </span>
         )}
-      </Link>
+      </Link> */}
     </div>
   );
 };

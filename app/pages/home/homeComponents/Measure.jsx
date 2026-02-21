@@ -21,9 +21,6 @@ export default function BloodSugarSection() {
               ✅ Easy blood sugar logging
             </li>
             <li className="flex items-center gap-3 text-gray-700">
-              📊 Smart charts & history tracking
-            </li>
-            <li className="flex items-center gap-3 text-gray-700">
               🔔 Alerts for abnormal readings
             </li>
           </ul>

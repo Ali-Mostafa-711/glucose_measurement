@@ -1,4 +1,5 @@
 "use client";
+import FadeIn from "../../components/animations/FadeIn";
 import useAxios from "../../items/hooks/useAxios";
 import Image from "next/image";
 import Link from "next/link";
@@ -61,7 +62,7 @@ export default function Login() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-[#0643DD]/10 to-[#0643DD]/30 px-4">
-      <div className="w-full max-w-4xl bg-white rounded-2xl shadow-2xl grid grid-cols-1 md:grid-cols-2 overflow-hidden animate-[fadeInUp_0.6s_ease-out]">
+      <div className="w-full max-w-4xl bg-white rounded-2xl shadow-2xl grid grid-cols-1 md:grid-cols-2 overflow-hidden animate-[fadeInUp_0.6s_ease-out] scale-110">
         {/* Left - Logo / Brand */}{" "}
         <div className="hidden md:flex flex-col justify-center items-center bg-linear-to-br from-[#0643DD] to-indigo-700 text-white p-10 animate-[fadeInUp_0.8s_ease-out]">
           {/* Logo */}{" "}
@@ -82,73 +83,74 @@ export default function Login() {
           </p>{" "}
         </div>
         {/* Right */}
-        <div className="flex items-center justify-center p-8 md:p-12">
-          <div className="w-full max-w-md">
-            <h2 className="text-3xl font-bold mb-2 text-gray-800">
-              Welcome Back 👋
-            </h2>
+        <FadeIn>
+          <div className="flex items-center justify-center p-8 md:p-12">
+            <div className="w-full max-w-md">
+              <h2 className="text-3xl font-bold mb-2 text-gray-800">
+                Welcome Back 👋
+              </h2>
 
-            <form onSubmit={handleSubmit} className="space-y-5">
-              <input
-                name="email"
-                value={userData.email}
-                onChange={handleChange}
-                type="email"
-                placeholder="Email address"
-                required
-                className="w-full px-4 py-3 border rounded-lg"
-              />
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <input
+                  name="email"
+                  value={userData.email}
+                  onChange={handleChange}
+                  type="email"
+                  placeholder="Email address"
+                  required
+                  className="w-full px-4 py-3 border rounded-lg"
+                />
 
-              <input
-                name="password"
-                value={userData.password}
-                onChange={handleChange}
-                type="password"
-                maxLength={20}
-                placeholder="Password (6–20 chars)"
-                required
-                className="w-full px-4 py-3 border rounded-lg"
-              />
+                <input
+                  name="password"
+                  value={userData.password}
+                  onChange={handleChange}
+                  type="password"
+                  maxLength={20}
+                  placeholder="Password (6–20 chars)"
+                  required
+                  className="w-full px-4 py-3 border rounded-lg"
+                />
 
-              <p className="text-sm text-right">
-                <Link
-                  href="/auth/forgot-password"
-                  className="text-[#0643DD] hover:underline"
+                <p className="text-sm text-right">
+                  <Link
+                    href="/auth/forgot-password"
+                    className="text-[#0643DD] hover:underline"
+                  >
+                    Forgot password?
+                  </Link>
+                </p>
+
+                {passwordError && (
+                  <p className="text-red-500 text-sm">{passwordError}</p>
+                )}
+
+                <button
+                  disabled={loading || !!passwordError}
+                  className="w-full bg-[#0643DD] text-white py-3 rounded-lg font-semibold disabled:opacity-50"
                 >
-                  Forgot password?
+                  {loading ? "Logging in..." : "Login"}
+                </button>
+
+                {error && (
+                  <p className="text-red-500 text-sm text-center">
+                    {error.message || error}
+                  </p>
+                )}
+              </form>
+
+              <p className="text-sm text-center mt-6 text-gray-600">
+                Don’t have an account?{" "}
+                <Link
+                  href="/auth/signup"
+                  className="text-[#0643DD] font-semibold hover:underline"
+                >
+                  Sign up
                 </Link>
               </p>
-
-              {passwordError && (
-                <p className="text-red-500 text-sm">{passwordError}</p>
-              )}
-
-              <button
-                disabled={loading || !!passwordError}
-                className="w-full bg-[#0643DD] text-white py-3 rounded-lg font-semibold disabled:opacity-50"
-              >
-                {loading ? "Logging in..." : "Login"}
-              </button>
-
-              {error && (
-                <p className="text-red-500 text-sm text-center">
-                  {error.message || error}
-                </p>
-              )}
-            </form>
-
-            <p className="text-sm text-center mt-6 text-gray-600">
-              Don’t have an account?{" "}
-              <Link
-                href="/auth/signup"
-                className="text-[#0643DD] font-semibold hover:underline"
-              >
-                Sign up
-              </Link>
-            </p>
-     
+            </div>
           </div>
-        </div>
+        </FadeIn>
       </div>
     </div>
   );

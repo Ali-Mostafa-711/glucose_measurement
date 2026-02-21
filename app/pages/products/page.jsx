@@ -14,21 +14,12 @@ import { useCart } from "../../../context/CartContext";
 const Products = () => {
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
-  const [showWarning, setShowWarning] = useState(false);
+  const [showWarning, setShowWarning] = useState(true);
   const [warningAccepted, setWarningAccepted] = useState(false);
   const [pendingProductId, setPendingProductId] = useState(null);
   const { addToCart } = useCart();
 
   const products = [
-    {
-      img: "https://media.gettyimages.com/id/526612260/photo/diabetes-medcine-pills.webp?s=2048x2048&w=gi&k=20&c=7_5N85EtRWNvQjj261KSK2JyuszwiIi_3ptygJYMP14=",
-      title: "Metformin",
-      description:
-        "Helps control blood sugar levels in type 2 diabetes by improving insulin sensitivity.",
-      id: "metformin",
-      category: "medicine",
-      price: 50,
-    },
     {
       img: "https://media.gettyimages.com/id/1432982719/photo/glipizide-pill-bottle-conceptual-image.webp?s=2048x2048&w=gi&k=20&c=GFvBxio4lYCcJ1hAmUF343YeeRaqdj3l9GcE7BmhWQE=",
       title: "Glipizide",
@@ -39,22 +30,22 @@ const Products = () => {
       price: 70,
     },
     {
-      img: "https://media.gettyimages.com/id/2228094865/photo/portugal-regulates-prescription-of-glp-1-receptor-agonist-class-such-as-ozempic-as-demand.webp?s=2048x2048&w=gi&k=20&c=i0YSF4Rfp1DfpKQvwXZLtrX3OeL_9lbWAoaRo1JM9sU=",
-      title: "Liraglutide (Victoza)",
+     img: "/med8.jpeg",
+      title: "Victoza",
       description:
-        "A GLP-1 receptor agonist that helps lower blood sugar and supports weight loss.",
+        "Active Ingredient: Liraglutide. Description: Helps control post-meal blood sugar and supports heart health",
       id: "liraglutide",
       category: "medicine",
-      price: 20,
+      price: 1600,
     },
     {
       img: "https://www.clinicaltrialsarena.com/wp-content/uploads/sites/22/2014/01/Image-1-Forxiga-dapagliflozin-shutterstock_2401535759.jpg",
-      title: "Dapagliflozin (Forxiga)",
+      title: "Forxiga",
       description:
-        "SGLT2 inhibitor that helps the kidneys remove glucose from the bloodstream.",
+        "Active Ingredient: Dapagliflozin. Description: Lowers blood sugar by removing excess glucose through urine",
       id: "dapagliflozin",
       category: "medicine",
-      price: 150,
+      price: 600,
     },
     {
       img: "https://media.gettyimages.com/id/2150938026/photo/human-crowd-surrounding-an-injectable-insulin-bottle-on-purple-background.webp?s=2048x2048&w=gi&k=20&c=vkrLbbXPxtm48P0z7Q09GAhh66kAW4GoRbRiXWX11sc=",
@@ -66,14 +57,69 @@ const Products = () => {
       price: 50,
     },
     {
-      img: "https://media.gettyimages.com/id/1432982374/photo/sitagliptin-pill-conceptual-image.webp?s=2048x2048&w=gi&k=20&c=BAu5DpylVlz0yE17njLiLCEpiG1rdUrQHTwWNpTL2nY=",
-      title: "Sitagliptin (Januvia)",
+      img: "/med1.jpeg",
+      title: "Glucophage (Metformin)",
       description:
-        "DPP-4 inhibitor that helps increase insulin release and decrease glucagon levels.",
-      id: "sitagliptin",
+        "Active Ingredient: Metformin. Description: Reduces glucose production in the liver and improves insulin sensitivity.",
+      id: "Glucophage",
       category: "medicine",
-      price: 45,
+      price: 60,
     },
+    {
+      img: "/med2.jpeg",
+      title: "Amaryl",
+      description:
+        "Active Ingredient: Glimepiride. Description: Stimulates the pancreas to release more insulin.",
+      id: "Amaryl",
+      category: "medicine",
+      price: 90,
+    },
+    {
+      img: "/med3.jpeg",
+      title: "Lantus (Insulin Glargine)",
+      description:
+        "Active Ingredient: Insulin Glargine. Description: Long-acting insulin providing up to 24-hour blood sugar control.",
+      id: "Lantus",
+      category: "medicine",
+      price: 500,
+    },
+    {
+      img: "/med4.jpeg",
+      title: "NovoRapid",
+      description:
+        "Active Ingredient: Insulin Aspart. Description: Rapid-acting insulin taken before meals",
+      id: "NovoRapid",
+      category: "medicine",
+      price: 450,
+    },
+    {
+      img: "/med5.jpeg",
+      title: "Galvus",
+      description:
+        "Active Ingredient: Vildagliptin. Description: Helps regulate insulin secretion after meals",
+      id: "Galvus",
+      category: "medicine",
+      price: 200,
+    },
+    {
+      img: "/med7.jpeg",
+      title: "Ozempic",
+      description:
+        "Active Ingredient: Semaglutide. Description: Weekly GLP-1 injection that lowers blood sugar and supports weight loss.",
+      id: "Ozempic",
+      category: "medicine",
+      price: 2000,
+    },
+       {
+      img: "/med10.jpeg",
+      title: "Januvia",
+      description:
+        "Active Ingredient: Sitagliptin. Description: Regulates insulin release based on blood sugar levels.",
+      id: "Januvia",
+      category: "medicine",
+      price: 400,
+    },
+
     {
       img: "https://media.gettyimages.com/id/1360140245/photo/blood-glucose-test.webp?s=2048x2048&w=gi&k=20&c=xqTdms51DKImoh2QEj1a1RVIhAr3Ou80uEjDf4AxCoE=",
       title: "Blood Glucose Meter",
@@ -109,12 +155,48 @@ const Products = () => {
       category: "device",
       price: 5000,
     },
+    {
+      img: "/dev1.jpeg",
+      title: "OneTouch Ultra",
+      description:
+        "A popular and accurate device Suitable for beginners in measurement Quick and clear results",
+      id: "OneTouch",
+      category: "device",
+      price: 950,
+    },
+    {
+      img: "/dev2.jpeg",
+      title: "Contour Plus",
+      description:
+        "Simple and easy-to-use blood glucose meter Clear screen and easy buttons  Good accuracy for daily use",
+      id: "Contour",
+      category: "device",
+      price: 800,
+    },
+    {
+      img: "/dev3.jpeg",
+      title: "FreeStyle Libre reader",
+      description:
+        "Part of the FreeStyle Libre system, displays readings on a screen.",
+      id: "FreeStyle",
+      category: "device",
+      price: 800,
+    },
+    {
+      img: "/dev4.jpeg",
+      title: "Continuous Glucose Monitoring (CGM) device",
+      description:
+        "small sensor under the skin readsglucose levels periodically without pricking.",
+      id: "CGM",
+      category: "device",
+      price: 600,
+    },
   ];
 
   const filteredProducts = products.filter((product) => {
-    const matchesSearch =
-      product.title.toLowerCase().includes(search.toLowerCase()) ||
-      product.description.toLowerCase().includes(search.toLowerCase());
+    const matchesSearch = product.title
+      .toLowerCase()
+      .includes(search.toLowerCase());
 
     const matchesCategory =
       selectedCategory === "all" || product.category === selectedCategory;
@@ -124,7 +206,6 @@ const Products = () => {
   const handleBuy = (product) => {
     if (product.category === "medicine" && !warningAccepted) {
       setPendingProductId(product);
-      setShowWarning(true);
       return;
     }
 
